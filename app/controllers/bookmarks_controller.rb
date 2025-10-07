@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(title: params[:bookmark][:title], url: params[:bookmark][:url], name: params[:bookmark][:name])
     if @bookmark.save
-        redirect_to '/'
+        redirect_to root_path
     else
         render 'new', status: :unprocessable_entity
     end
@@ -20,7 +20,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.destroy # 成功時
         flash[:notice] = '削除に成功しました'
-        redirect_to '/'
+        redirect_to root_path
     else
         render 'destroy', status: :unprocessable_entity
     end
@@ -37,6 +37,7 @@ class BookmarksController < ApplicationController
   def update
     bookmark = Bookmark.find(params[:id])
     bookmark.update(title: params[:bookmark][:title], url: params[:bookmark][:url], name: params[:bookmark][:name])
-    redirect_to '/'
+    redirect_to root_path
+
   end
 end
