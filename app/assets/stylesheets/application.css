@@ -46,6 +46,44 @@
   background-color: black;
   color: white;
 }
+
+/* ヘッダー */
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* フッター */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* メイン部分の2カラム */
+.container {
+  display: flex;
+  margin: 20px;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #eee;
+  padding: 15px;
+}
+
+.main {
+  width: 75%;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css.
  *
